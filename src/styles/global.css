@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400&family=Lato:wght@300;400&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ============================================================
    DESIGN TOKENS
    ============================================================ */
@@ -22,9 +18,6 @@
   --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* ============================================================
-   BASE
-   ============================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -73,6 +66,10 @@ body {
   text-transform: uppercase;
 }
 
+.stars {
+  color: var(--gold);
+}
+
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -89,6 +86,7 @@ body {
   display: inline-block;
   text-align: center;
   letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
 .btn-gold:hover {
@@ -101,8 +99,13 @@ body {
   font-size: 17px;
 }
 
+.btn-gold-sm {
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
 /* ============================================================
-   SCROLL FADE-IN (Intersection Observer)
+   SCROLL FADE-IN
    ============================================================ */
 .fade-section {
   opacity: 0;
@@ -139,8 +142,16 @@ body {
 }
 
 /* ============================================================
-   HERO VIGNETTE
+   HERO IMAGE + VIGNETTE
    ============================================================ */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-vignette {
   position: absolute;
   inset: 0;
@@ -213,7 +224,7 @@ body {
 }
 
 /* ============================================================
-   FOOTER LINKS / SOCIAL
+   FOOTER + SOCIAL + LANG
    ============================================================ */
 .footer-link {
   color: var(--text-faint);
@@ -234,9 +245,6 @@ body {
   color: var(--gold);
 }
 
-/* ============================================================
-   LANG TOGGLE
-   ============================================================ */
 .lang-btn {
   font-family: var(--font-sans);
   font-weight: 400;

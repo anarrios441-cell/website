@@ -1,0 +1,444 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Logo from '../components/Logo.astro'
+
+/* ============================================================
+   COPY — EN / PT-BR
+   ============================================================ */
+const en = {
+  navCta: 'Create their message',
+  heroRating: 'Rated 5 stars · 18 beta families',
+  heroH1a: "Keep your pet's",
+  heroH1b: 'presence alive.',
+  heroSub:
+    "We bring your pet's voice back — one final time. A personalised video message, created from your memories together.",
+  heroCta: 'Create their message — $39',
+  heroNote: 'Delivered within 24 hours · Private · Yours forever',
+  howLabel: 'HOW IT WORKS',
+  howH1a: 'Three steps. One message.',
+  howH1b: 'A lifetime of comfort.',
+  steps: [
+    { n: '01', title: 'Tell us about them', body: 'Share their name, personality, and your favourite memories. The details only you know.' },
+    { n: '02', title: 'Share your photos', body: "Send us the photos you can't stop looking at. They become the heart of the message." },
+    { n: '03', title: 'Receive their message', body: "It arrives as a surprise. Because that's how love works." },
+  ],
+  testLabel: 'WHAT FAMILIES ARE SAYING',
+  testH1: '"They said it better than we ever could."',
+  testRating: '18 reviews · 94% satisfaction · Early Beta',
+  testimonials: [
+    { quote: 'I watched it four times. Each time I found something new that was exactly her.', name: 'Sarah · Australia' },
+    { quote: "I didn't expect to laugh. But I did. And then I cried. And then I laughed again.", name: 'Miguel · Brazil' },
+    { quote: "He said the thing I needed to hear. I don't know how, but he did.", name: 'Emma · United Kingdom' },
+  ],
+  testNote: 'These are real messages from our first beta families.',
+  recvLabel: 'WHAT YOU RECEIVE',
+  recvH1: 'Two ways to hear from them.',
+  plans: [
+    {
+      plan: 'letter',
+      name: 'The Letter',
+      price: '$19',
+      sub: 'A written message, in their voice.',
+      badge: '',
+      features: [
+        'A personalised letter, written in their voice',
+        'Built from your memories and their personality',
+        'A private link, delivered to your inbox',
+        'Yours forever — no expiry, no subscription',
+      ],
+      cta: 'Choose the letter',
+    },
+    {
+      plan: 'full',
+      name: 'The Message',
+      price: '$39',
+      sub: 'The full experience — voice, video & portrait.',
+      badge: 'Most loved',
+      features: [
+        'Everything in The Letter',
+        'A 75-second personalised video message',
+        "Your pet's voice — matched to their personality",
+        'A photorealistic portrait, created from your photos',
+      ],
+      cta: 'Choose the message',
+    },
+  ],
+  priceNote: 'One time · No subscription · Delivered within 24 hours',
+  faqLabel: 'QUESTIONS',
+  faqH1: 'You might be wondering.',
+  faqs: [
+    { q: 'How long does it take?', a: '24 hours or less. We review every message personally before it reaches you.' },
+    { q: 'Is the message really personalised?', a: 'Every word. Every detail. We build it from everything you tell us — their nicknames, habits, the funny things they did. No two messages are ever the same.' },
+    { q: "What if I don't have videos?", a: 'Photos are enough. Videos make the experience richer, but they are never required. Many families have created beautiful messages with photos alone.' },
+    { q: 'Is it private?', a: 'Always. Only you receive the link. We never share, publish, or use your content for anything beyond creating your message.' },
+    { q: "What if I'm not happy with the result?", a: "We'll make it right. If the portrait doesn't look like your pet, we regenerate it — free of charge. Your peace of mind matters more than anything else." },
+  ],
+  finalH1a: 'They still have',
+  finalH1b: 'something to say.',
+  finalSub: 'Give them one last moment with you.',
+  finalCta: 'Create their message — $39',
+  finalNote: 'Delivered within 24 hours · Private · Yours forever',
+  footLinks: ['Privacy Policy', 'Terms of Service'],
+  copyright: '© 2025 Nazura AI. All rights reserved.',
+}
+
+const pt = {
+  navCta: 'Criar a mensagem',
+  heroRating: 'Avaliado 5 estrelas · 18 famílias beta',
+  heroH1a: 'Mantenha a presença',
+  heroH1b: 'do seu pet viva.',
+  heroSub:
+    'Devolvemos a voz do seu pet — uma última vez. Uma mensagem em vídeo personalizada, criada a partir das memórias de vocês.',
+  heroCta: 'Criar a mensagem — $39',
+  heroNote: 'Entregue em até 24 horas · Privado · Seu para sempre',
+  howLabel: 'COMO FUNCIONA',
+  howH1a: 'Três passos. Uma mensagem.',
+  howH1b: 'Uma vida de conforto.',
+  steps: [
+    { n: '01', title: 'Nos conte sobre eles', body: 'Compartilhe o nome, a personalidade e suas memórias favoritas. Os detalhes que só você conhece.' },
+    { n: '02', title: 'Compartilhe suas fotos', body: 'Envie as fotos que você não consegue parar de olhar. Elas se tornam o coração da mensagem.' },
+    { n: '03', title: 'Receba a mensagem deles', body: 'Ela chega como uma surpresa. Porque é assim que o amor funciona.' },
+  ],
+  testLabel: 'O QUE AS FAMÍLIAS DIZEM',
+  testH1: '"Eles disseram melhor do que nós poderíamos."',
+  testRating: '18 avaliações · 94% de satisfação · Beta inicial',
+  testimonials: [
+    { quote: 'Assisti quatro vezes. A cada vez encontrei algo novo que era exatamente ela.', name: 'Sarah · Austrália' },
+    { quote: 'Não esperava rir. Mas eu ri. E depois chorei. E depois ri de novo.', name: 'Miguel · Brasil' },
+    { quote: 'Ele disse o que eu precisava ouvir. Não sei como, mas disse.', name: 'Emma · Reino Unido' },
+  ],
+  testNote: 'Estas são mensagens reais das nossas primeiras famílias beta.',
+  recvLabel: 'O QUE VOCÊ RECEBE',
+  recvH1: 'Duas formas de ouvir deles.',
+  plans: [
+    {
+      plan: 'letter',
+      name: 'A Carta',
+      price: '$19',
+      sub: 'Uma mensagem escrita, na voz dele.',
+      badge: '',
+      features: [
+        'Uma carta personalizada, escrita na voz dele',
+        'Criada a partir das suas memórias e da personalidade dele',
+        'Um link privado, entregue no seu e-mail',
+        'Seu para sempre — sem prazo, sem assinatura',
+      ],
+      cta: 'Escolher a carta',
+    },
+    {
+      plan: 'full',
+      name: 'A Mensagem',
+      price: '$39',
+      sub: 'A experiência completa — voz, vídeo e retrato.',
+      badge: 'Mais amado',
+      features: [
+        'Tudo da Carta',
+        'Uma mensagem em vídeo personalizada de 75 segundos',
+        'A voz do seu pet — adaptada à personalidade dele',
+        'Um retrato fotorrealista criado a partir das suas fotos',
+      ],
+      cta: 'Escolher a mensagem',
+    },
+  ],
+  priceNote: 'Uma vez · Sem assinatura · Entregue em até 24 horas',
+  faqLabel: 'DÚVIDAS',
+  faqH1: 'Você pode estar se perguntando.',
+  faqs: [
+    { q: 'Quanto tempo leva?', a: '24 horas ou menos. Revisamos cada mensagem pessoalmente antes de chegar até você.' },
+    { q: 'A mensagem é realmente personalizada?', a: 'Cada palavra. Cada detalhe. Construímos a partir de tudo que você nos conta — os apelidos, os hábitos, as coisas engraçadas que faziam. Duas mensagens nunca são iguais.' },
+    { q: 'E se eu não tiver vídeos?', a: 'As fotos são suficientes. Os vídeos enriquecem a experiência, mas nunca são obrigatórios. Muitas famílias criaram mensagens lindas apenas com fotos.' },
+    { q: 'É privado?', a: 'Sempre. Só você recebe o link. Nunca compartilhamos, publicamos ou usamos seu conteúdo para nada além de criar a sua mensagem.' },
+    { q: 'E se eu não gostar do resultado?', a: 'Vamos resolver. Se o retrato não parecer com seu pet, geramos novamente — sem custo adicional. Sua tranquilidade importa mais do que qualquer outra coisa.' },
+  ],
+  finalH1a: 'Eles ainda têm',
+  finalH1b: 'algo a dizer.',
+  finalSub: 'Dê a eles um último momento com você.',
+  finalCta: 'Criar a mensagem — $39',
+  finalNote: 'Entregue em até 24 horas · Privado · Seu para sempre',
+  footLinks: ['Política de Privacidade', 'Termos de Serviço'],
+  copyright: '© 2025 Nazura AI. Todos os direitos reservados.',
+}
+
+/* default-render language */
+const t = en
+
+/* deterministic gold particles */
+const PARTICLES = [
+  { top: '12%', left: '8%', size: 3, dur: 6, delay: 0, op: 0.3 },
+  { top: '22%', left: '82%', size: 2, dur: 7, delay: 1.2, op: 0.25 },
+  { top: '34%', left: '45%', size: 4, dur: 5, delay: 0.6, op: 0.35 },
+  { top: '48%', left: '18%', size: 2, dur: 8, delay: 2.1, op: 0.28 },
+  { top: '58%', left: '72%', size: 3, dur: 6.5, delay: 0.3, op: 0.4 },
+  { top: '15%', left: '60%', size: 2, dur: 7.5, delay: 1.8, op: 0.22 },
+  { top: '70%', left: '38%', size: 3, dur: 5.5, delay: 3.2, op: 0.32 },
+  { top: '80%', left: '88%', size: 2, dur: 6.8, delay: 0.9, op: 0.26 },
+  { top: '40%', left: '92%', size: 3, dur: 7.2, delay: 2.6, op: 0.3 },
+  { top: '64%', left: '6%', size: 2, dur: 8, delay: 1.5, op: 0.24 },
+  { top: '88%', left: '52%', size: 4, dur: 6, delay: 3.8, op: 0.34 },
+  { top: '28%', left: '28%', size: 2, dur: 7, delay: 0.4, op: 0.27 },
+]
+---
+
+<Layout>
+  <main>
+    <!-- ===================== HEADER ===================== -->
+    <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+        <Logo width={150} height={36} />
+        <div class="flex items-center gap-4 sm:gap-6">
+          <div class="flex items-center gap-2">
+            <button id="lang-en" class="lang-btn" style="color: var(--gold)" aria-label="English">EN</button>
+            <span style="color: var(--text-faint)">|</span>
+            <button id="lang-pt" class="lang-btn" style="color: var(--text-muted)" aria-label="Português">PT</button>
+          </div>
+          <a href="/checkout?plan=full" class="btn-gold btn-gold-sm hidden sm:inline-block" data-i18n="navCta">{t.navCta}</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <img
+        class="hero-img"
+        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1920&q=80"
+        alt=""
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0" style="background: rgba(0,0,0,0.65)"></div>
+      <div class="hero-vignette"></div>
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        {PARTICLES.map((p) => (
+          <span
+            class="particle"
+            style={`top:${p.top};left:${p.left};width:${p.size}px;height:${p.size}px;opacity:${p.op};animation-duration:${p.dur}s;animation-delay:${p.delay}s;`}
+          ></span>
+        ))}
+      </div>
+
+      <div class="relative z-10 px-6 text-center flex flex-col items-center">
+        <p class="font-sans mb-6 text-[13px]" style="color: var(--text-muted); font-weight: 300">
+          <span class="stars">★★★★★</span>&nbsp;<span data-i18n="heroRating">{t.heroRating}</span>
+        </p>
+        <h1 class="font-serif-italic leading-[1.1]" style="color: var(--text-primary); font-size: clamp(44px, 7vw, 68px)">
+          <span data-i18n="heroH1a">{t.heroH1a}</span><br /><span data-i18n="heroH1b">{t.heroH1b}</span>
+        </h1>
+        <p class="font-sans mt-7 mx-auto" style="color: var(--text-muted); max-width: 520px; font-weight: 300; font-size: clamp(16px, 2vw, 18px)" data-i18n="heroSub">{t.heroSub}</p>
+        <a href="/checkout?plan=full" class="btn-gold mt-10" data-i18n="heroCta">{t.heroCta}</a>
+        <p class="font-sans mt-5 text-[12px]" style="color: var(--text-faint); font-weight: 300" data-i18n="heroNote">{t.heroNote}</p>
+      </div>
+
+      <div id="scroll-indicator" class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M7 10l5 5 5-5" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-section)">
+      <div class="max-w-6xl mx-auto">
+        <p class="eyebrow text-center mb-4" data-i18n="howLabel">{t.howLabel}</p>
+        <h2 class="font-serif-italic text-center mb-[60px] leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)">
+          <span data-i18n="howH1a">{t.howH1a}</span><br /><span data-i18n="howH1b">{t.howH1b}</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.steps.map((s, i) => (
+            <div class="p-9 rounded-[2px]" style="background: var(--bg-card); border: 1px solid var(--gold-border)">
+              <p class="font-sans mb-5" style="color: var(--gold); font-size: 11px; letter-spacing: 3px">{s.n}</p>
+              <h3 class="font-serif-italic mb-3" style="color: var(--text-primary); font-size: 24px" data-i18n={`steps.${i}.title`}>{s.title}</h3>
+              <p class="font-sans" style="color: var(--text-muted); font-weight: 300; font-size: 15px" data-i18n={`steps.${i}.body`}>{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-primary)">
+      <div class="max-w-6xl mx-auto">
+        <p class="eyebrow text-center mb-4" data-i18n="testLabel">{t.testLabel}</p>
+        <h2 class="font-serif-italic text-center mb-5 leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)" data-i18n="testH1">{t.testH1}</h2>
+        <p class="font-sans text-center mb-[50px] text-[14px]" style="color: var(--text-muted); font-weight: 300">
+          <span class="stars">★★★★★</span>&nbsp;<span data-i18n="testRating">{t.testRating}</span>
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.testimonials.map((c, i) => (
+            <div class="p-8" style="background: var(--bg-card); border: 1px solid var(--gold-border); border-left: 2px solid var(--gold)">
+              <p class="mb-4 text-[13px]"><span class="stars">★★★★★</span></p>
+              <p class="font-serif-italic mb-5" style="color: var(--text-primary); font-size: 19px; line-height: 1.5" data-i18n={`testimonials.${i}.quote`}>{c.quote}</p>
+              <p class="font-sans text-[13px]" style="color: var(--text-muted); font-weight: 400" data-i18n={`testimonials.${i}.name`}>{c.name}</p>
+            </div>
+          ))}
+        </div>
+        <p class="font-serif-italic text-center mt-12 text-[16px]" style="color: var(--text-faint)" data-i18n="testNote">{t.testNote}</p>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT YOU RECEIVE ===================== -->
+    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-section)">
+      <div class="max-w-6xl mx-auto">
+        <p class="eyebrow text-center mb-4" data-i18n="recvLabel">{t.recvLabel}</p>
+        <h2 class="font-serif-italic text-center mb-[60px]" style="color: var(--text-primary); font-size: clamp(36px, 6vw, 52px)" data-i18n="recvH1">{t.recvH1}</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
+          {t.plans.map((pl, pi) => (
+            <div class="relative p-9 rounded-[2px] flex flex-col" style={`background: var(--bg-card); border: 1px solid ${pl.plan === 'full' ? 'var(--gold)' : 'var(--gold-border)'}`}>
+              {pl.badge && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 font-sans whitespace-nowrap" style="background: var(--gold); color: #0A0806; font-size: 10px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 2px" data-i18n={`plans.${pi}.badge`}>{pl.badge}</span>
+              )}
+              <h3 class="font-serif-italic text-center" style="color: var(--text-primary); font-size: 26px" data-i18n={`plans.${pi}.name`}>{pl.name}</h3>
+              <p class="font-sans text-center mt-2" style="color: var(--gold); font-size: 52px; font-weight: 300; line-height: 1.1">{pl.price}</p>
+              <p class="font-sans text-center mt-1 mb-7 text-[13px]" style="color: var(--text-muted); font-weight: 300" data-i18n={`plans.${pi}.sub`}>{pl.sub}</p>
+              <div style="border-top: 1px solid var(--gold-border)" class="mb-7"></div>
+              <ul class="flex flex-col gap-3 mb-8">
+                {pl.features.map((f, fi) => (
+                  <li class="font-sans flex gap-3" style="color: var(--text-primary); font-weight: 300; font-size: 15px">
+                    <span style="color: var(--gold)">✦</span><span data-i18n={`plans.${pi}.features.${fi}`}>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={`/checkout?plan=${pl.plan}`} class="btn-gold w-full mt-auto" data-i18n={`plans.${pi}.cta`}>{pl.cta}</a>
+            </div>
+          ))}
+        </div>
+        <p class="font-sans text-center mt-10 text-[12px]" style="color: var(--text-faint); font-weight: 300" data-i18n="priceNote">{t.priceNote}</p>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-primary)">
+      <div class="max-w-[680px] mx-auto">
+        <p class="eyebrow text-center mb-4" data-i18n="faqLabel">{t.faqLabel}</p>
+        <h2 class="font-serif-italic text-center mb-12" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)" data-i18n="faqH1">{t.faqH1}</h2>
+        <div>
+          {t.faqs.map((f, i) => (
+            <div class="py-5" style="border-bottom: 1px solid var(--gold-border)">
+              <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" data-index={i}>
+                <span class="font-sans" style="color: var(--text-primary); font-weight: 400; font-size: 16px" data-i18n={`faqs.${i}.q`}>{f.q}</span>
+                <span class="faq-arrow" style="color: var(--gold)">➜</span>
+              </button>
+              <div class="faq-answer">
+                <p class="font-sans pt-4" style="color: var(--text-muted); font-weight: 300; font-size: 15px; line-height: 1.75" data-i18n={`faqs.${i}.a`}>{f.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6" style="background: var(--bg-primary)">
+      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(196,148,74,0.04) 0%, transparent 60%)"></div>
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        {PARTICLES.map((p) => (
+          <span
+            class="particle"
+            style={`top:${p.top};left:${p.left};width:${p.size}px;height:${p.size}px;opacity:${p.op};animation-duration:${p.dur}s;animation-delay:${p.delay}s;`}
+          ></span>
+        ))}
+      </div>
+      <div class="relative z-10 text-center flex flex-col items-center">
+        <h2 class="font-serif-italic leading-[1.1]" style="color: var(--text-primary); font-size: clamp(44px, 7vw, 64px)">
+          <span data-i18n="finalH1a">{t.finalH1a}</span><br /><span data-i18n="finalH1b">{t.finalH1b}</span>
+        </h2>
+        <p class="font-sans mt-5 mx-auto" style="color: var(--text-muted); font-weight: 300; font-size: clamp(16px, 2vw, 18px)" data-i18n="finalSub">{t.finalSub}</p>
+        <a href="/checkout?plan=full" class="btn-gold btn-gold-lg mt-10" data-i18n="finalCta">{t.finalCta}</a>
+        <p class="font-sans mt-5 text-[12px]" style="color: var(--text-faint); font-weight: 300" data-i18n="finalNote">{t.finalNote}</p>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="py-12 px-6" style="background: #060402; border-top: 1px solid var(--gold-border)">
+      <div class="max-w-6xl mx-auto flex flex-col items-center gap-6">
+        <Logo width={120} height={28} />
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[12px] font-sans">
+          <a href="#" class="footer-link" data-i18n="footLinks.0">{t.footLinks[0]}</a>
+          <span style="color: var(--text-faint)">·</span>
+          <a href="#" class="footer-link" data-i18n="footLinks.1">{t.footLinks[1]}</a>
+          <span style="color: var(--text-faint)">·</span>
+          <a href="mailto:hello@nazuraai.com" class="footer-link">hello@nazuraai.com</a>
+        </div>
+        <div class="flex items-center gap-5">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16.5 3a4.8 4.8 0 0 0 4 4.2v2.7a7.4 7.4 0 0 1-4-1.2v5.9a5.6 5.6 0 1 1-5.6-5.6c.2 0 .4 0 .6.05v2.8a2.8 2.8 0 1 0 2 2.7V3h3z"></path>
+            </svg>
+          </a>
+        </div>
+        <p class="font-sans text-[11px]" style="color: var(--text-faint); font-weight: 300" data-i18n="copyright">{t.copyright}</p>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<script define:vars={{ en, pt }}>
+  const dict = { en, pt }
+  let lang = 'en'
+
+  const getPath = (obj, path) =>
+    path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj)
+
+  function applyLang(l) {
+    lang = l
+    document.documentElement.lang = l
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const v = getPath(dict[l], el.getAttribute('data-i18n'))
+      if (typeof v === 'string') el.textContent = v
+    })
+    document.getElementById('lang-en').style.color =
+      l === 'en' ? 'var(--gold)' : 'var(--text-muted)'
+    document.getElementById('lang-pt').style.color =
+      l === 'pt' ? 'var(--gold)' : 'var(--text-muted)'
+  }
+
+  document.getElementById('lang-en').addEventListener('click', () => applyLang('en'))
+  document.getElementById('lang-pt').addEventListener('click', () => applyLang('pt'))
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling
+      const arrow = btn.querySelector('.faq-arrow')
+      const open = answer.classList.contains('open')
+      // close all
+      document.querySelectorAll('.faq-answer').forEach((a) => a.classList.remove('open'))
+      document.querySelectorAll('.faq-arrow').forEach((a) => a.classList.remove('open'))
+      if (!open) {
+        answer.classList.add('open')
+        arrow.classList.add('open')
+      }
+    })
+  })
+
+  // Header blur + scroll indicator
+  const header = document.getElementById('site-header')
+  const indicator = document.getElementById('scroll-indicator')
+  const onScroll = () => {
+    const y = window.scrollY
+    header.classList.toggle('scrolled', y > 50)
+    if (indicator) indicator.style.opacity = y > 30 ? '0' : '1'
+  }
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+
+  // Scroll fade-in
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+          obs.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.15 }
+  )
+  document.querySelectorAll('.fade-section').forEach((el) => obs.observe(el))
+</script>

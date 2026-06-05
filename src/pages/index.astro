@@ -398,8 +398,25 @@ const PARTICLES = [
       l === 'pt' ? 'var(--gold)' : 'var(--text-muted)'
   }
 
-  document.getElementById('lang-en').addEventListener('click', () => applyLang('en'))
-  document.getElementById('lang-pt').addEventListener('click', () => applyLang('pt'))
+  // Manual pick — remember it so it sticks on reload
+  function pickLang(l) {
+    applyLang(l)
+    try {
+      localStorage.setItem('nazura-lang', l)
+    } catch (e) {}
+  }
+  document.getElementById('lang-en').addEventListener('click', () => pickLang('en'))
+  document.getElementById('lang-pt').addEventListener('click', () => pickLang('pt'))
+
+  // Auto-detect on load: a remembered manual choice wins; otherwise use the
+  // device/browser language (Portuguese devices → PT, everyone else → EN).
+  let saved = null
+  try {
+    saved = localStorage.getItem('nazura-lang')
+  } catch (e) {}
+  const deviceLangs = navigator.languages || [navigator.language || 'en']
+  const deviceIsPt = deviceLangs.some((l) => l.toLowerCase().startsWith('pt'))
+  applyLang(saved || (deviceIsPt ? 'pt' : 'en'))
 
   // FAQ accordion
   document.querySelectorAll('.faq-toggle').forEach((btn) => {

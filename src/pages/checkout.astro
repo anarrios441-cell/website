@@ -1,0 +1,7 @@
+---
+export const prerender = false
+import Layout from '../layouts/Layout.astro'
+
+const plan = Astro.url.searchParams.get('plan') ?? 'full'
+return Astro.redirect(`/api/checkout?plan=${plan}`)
+---

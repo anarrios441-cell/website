@@ -6,13 +6,13 @@ import Logo from '../components/Logo.astro'
    COPY — EN / PT-BR
    ============================================================ */
 const en = {
-  navCta: 'Create their message',
+  navCta: 'Receive their message',
   heroRating: 'Rated 5 stars · 18 beta families',
   heroH1a: "Keep your pet's",
   heroH1b: 'presence alive.',
   heroSub:
     "We bring your pet's voice back — one final time. A personalised video message, created from your memories together.",
-  heroCta: 'Create their message — $39',
+  heroCta: 'Receive their message',
   heroNote: 'Delivered within 24 hours · Private · Yours forever',
   howLabel: 'HOW IT WORKS',
   howH1a: 'Three steps. One message.',
@@ -38,10 +38,10 @@ const en = {
       plan: 'letter',
       name: 'The Letter',
       price: '$19',
-      sub: 'A written message, in their voice.',
+      sub: 'A heartfelt written letter, crafted from your memories.',
       badge: '',
       features: [
-        'A personalised letter, written in their voice',
+        'A personalised letter, written as if from them',
         'Built from your memories and their personality',
         'A private link, delivered to your inbox',
         'Yours forever — no expiry, no subscription',
@@ -76,20 +76,20 @@ const en = {
   finalH1a: 'They still have',
   finalH1b: 'something to say.',
   finalSub: 'Give them one last moment with you.',
-  finalCta: 'Create their message — $39',
+  finalCta: 'Receive their message',
   finalNote: 'Delivered within 24 hours · Private · Yours forever',
   footLinks: ['Privacy Policy', 'Terms of Service'],
   copyright: '© 2025 Nazura AI. All rights reserved.',
 }
 
 const pt = {
-  navCta: 'Criar a mensagem',
+  navCta: 'Receber mensagem',
   heroRating: 'Avaliado 5 estrelas · 18 famílias beta',
   heroH1a: 'Mantenha a presença',
   heroH1b: 'do seu pet viva.',
   heroSub:
     'Devolvemos a voz do seu pet — uma última vez. Uma mensagem em vídeo personalizada, criada a partir das memórias de vocês.',
-  heroCta: 'Criar a mensagem — $39',
+  heroCta: 'Receber mensagem',
   heroNote: 'Entregue em até 24 horas · Privado · Seu para sempre',
   howLabel: 'COMO FUNCIONA',
   howH1a: 'Três passos. Uma mensagem.',
@@ -115,10 +115,10 @@ const pt = {
       plan: 'letter',
       name: 'A Carta',
       price: '$19',
-      sub: 'Uma mensagem escrita, na voz dele.',
+      sub: 'Uma carta emocionante, criada a partir das suas memórias.',
       badge: '',
       features: [
-        'Uma carta personalizada, escrita na voz dele',
+        'Uma carta personalizada, escrita como se fosse dele',
         'Criada a partir das suas memórias e da personalidade dele',
         'Um link privado, entregue no seu e-mail',
         'Seu para sempre — sem prazo, sem assinatura',
@@ -153,7 +153,7 @@ const pt = {
   finalH1a: 'Eles ainda têm',
   finalH1b: 'algo a dizer.',
   finalSub: 'Dê a eles um último momento com você.',
-  finalCta: 'Criar a mensagem — $39',
+  finalCta: 'Receber mensagem',
   finalNote: 'Entregue em até 24 horas · Privado · Seu para sempre',
   footLinks: ['Política de Privacidade', 'Termos de Serviço'],
   copyright: '© 2025 Nazura AI. Todos os direitos reservados.',
@@ -184,7 +184,7 @@ const PARTICLES = [
     <!-- ===================== HEADER ===================== -->
     <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50">
       <div class="max-w-6xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
-        <Logo width={150} height={36} />
+        <Logo width={200} height={48} />
         <div class="flex items-center gap-4 sm:gap-6">
           <div class="flex items-center gap-2">
             <button id="lang-en" class="lang-btn" style="color: var(--gold)" aria-label="English">EN</button>
@@ -200,7 +200,7 @@ const PARTICLES = [
     <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <img
         class="hero-img"
-        src="https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?w=1920&q=80"
+        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1920&q=80"
         alt=""
         fetchpriority="high"
       />
@@ -216,15 +216,12 @@ const PARTICLES = [
       </div>
 
       <div class="relative z-10 px-6 text-center flex flex-col items-center">
-        <p class="font-sans mb-6 text-[13px]" style="color: var(--text-muted); font-weight: 300">
-          <span class="stars">★★★★★</span>&nbsp;<span data-i18n="heroRating">{t.heroRating}</span>
-        </p>
-        <h1 class="font-serif-italic leading-[1.1]" style="color: var(--text-primary); font-size: clamp(44px, 7vw, 68px); font-weight: 700">
+        <h1 class="font-serif-italic leading-[1.1]" style="color: var(--text-primary); font-size: clamp(44px, 7vw, 64px)">
           <span data-i18n="heroH1a">{t.heroH1a}</span><br /><span data-i18n="heroH1b">{t.heroH1b}</span>
         </h1>
-        <p class="font-sans mt-7 mx-auto" style="color: var(--text-muted); max-width: 520px; font-weight: 300; font-size: clamp(16px, 2vw, 18px)" data-i18n="heroSub">{t.heroSub}</p>
+        <p class="font-sans mt-7 mx-auto" style="color: #ffffff; max-width: 520px; font-weight: 400; font-size: clamp(16px, 2vw, 18px); text-shadow: 0 1px 8px rgba(0,0,0,0.6)" data-i18n="heroSub">{t.heroSub}</p>
         <a href="/checkout?plan=full" class="btn-gold mt-10" data-i18n="heroCta">{t.heroCta}</a>
-        <p class="font-sans mt-5 text-[12px]" style="color: var(--text-faint); font-weight: 300" data-i18n="heroNote">{t.heroNote}</p>
+        <p class="font-sans mt-5 text-[13px]" style="color: #ffffff; font-weight: 400; text-shadow: 0 1px 6px rgba(0,0,0,0.8); letter-spacing: 0.5px" data-i18n="heroNote">{t.heroNote}</p>
       </div>
 
       <div id="scroll-indicator" class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
@@ -235,20 +232,32 @@ const PARTICLES = [
     </section>
 
     <!-- ===================== HOW IT WORKS ===================== -->
-    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-section)">
+    <section id="how-it-works" class="fade-section relative py-[100px] px-6" style="background: var(--bg-section)">
       <div class="max-w-6xl mx-auto">
         <p class="eyebrow text-center mb-4" data-i18n="howLabel">{t.howLabel}</p>
-        <h2 class="font-serif-italic text-center mb-[60px] leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)">
+        <h2 class="font-serif-italic text-center mb-[60px] leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px); font-weight: 700">
           <span data-i18n="howH1a">{t.howH1a}</span><br /><span data-i18n="howH1b">{t.howH1b}</span>
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.steps.map((s, i) => (
-            <div class="p-9 rounded-[2px]" style="background: var(--bg-card); border: 1px solid var(--gold-border)">
-              <p class="font-sans mb-5" style="color: var(--gold); font-size: 11px; letter-spacing: 3px">{s.n}</p>
-              <h3 class="font-serif-italic mb-3" style="color: var(--text-primary); font-size: 24px" data-i18n={`steps.${i}.title`}>{s.title}</h3>
-              <p class="font-sans" style="color: var(--text-muted); font-weight: 300; font-size: 15px" data-i18n={`steps.${i}.body`}>{s.body}</p>
-            </div>
-          ))}
+          {t.steps.map((s, i) => {
+            const imgs = [
+              'https://images.pexels.com/photos/16252875/pexels-photo-16252875.jpeg?auto=compress&cs=tinysrgb&w=800',
+              'https://images.pexels.com/photos/17650804/pexels-photo-17650804.jpeg?auto=compress&cs=tinysrgb&w=800',
+              'https://images.pexels.com/photos/18327709/pexels-photo-18327709.jpeg?auto=compress&cs=tinysrgb&w=800',
+            ]
+            return (
+              <div class="rounded-[2px] overflow-hidden flex flex-col" style="background: var(--bg-card); border: 1px solid var(--gold-border)">
+                <div style="height: 200px; overflow: hidden">
+                  <img src={imgs[i]} alt="" class="w-full h-full object-cover" style="object-position: center center" />
+                </div>
+                <div class="p-9 flex flex-col flex-1">
+                  <p class="font-sans mb-5" style="color: var(--gold); font-size: 11px; letter-spacing: 3px">{s.n}</p>
+                  <h3 class="font-serif-italic mb-3" style="color: var(--text-primary); font-size: 24px" data-i18n={`steps.${i}.title`}>{s.title}</h3>
+                  <p class="font-sans" style="color: var(--text-muted); font-weight: 300; font-size: 15px" data-i18n={`steps.${i}.body`}>{s.body}</p>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -258,18 +267,6 @@ const PARTICLES = [
       <div class="max-w-6xl mx-auto">
         <p class="eyebrow text-center mb-4" data-i18n="testLabel">{t.testLabel}</p>
         <h2 class="font-serif-italic text-center mb-5 leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)" data-i18n="testH1">{t.testH1}</h2>
-        <p class="font-sans text-center mb-[50px] text-[14px]" style="color: var(--text-muted); font-weight: 300">
-          <span class="stars">★★★★★</span>&nbsp;<span data-i18n="testRating">{t.testRating}</span>
-        </p>
-        <div class="w-full mb-12 rounded-[2px] overflow-hidden" style="height: 340px">
-          <img
-            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1920&q=80"
-            alt=""
-            class="w-full h-full object-cover"
-            style="object-position: center 40%"
-          />
-        </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.testimonials.map((c, i) => (
             <div class="p-8" style="background: var(--bg-card); border: 1px solid var(--gold-border); border-left: 2px solid var(--gold)">
@@ -335,8 +332,15 @@ const PARTICLES = [
     </section>
 
     <!-- ===================== FINAL CTA ===================== -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6" style="background: var(--bg-primary)">
-      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(196,148,74,0.04) 0%, transparent 60%)"></div>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+      <img
+        src="https://images.pexels.com/photos/16049218/pexels-photo-16049218.jpeg?auto=compress&cs=tinysrgb&w=1920"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover"
+        style="object-position: center 75%"
+      />
+      <div class="absolute inset-0" style="background: rgba(0,0,0,0.78)"></div>
+      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(196,148,74,0.07) 0%, transparent 65%)"></div>
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
         {PARTICLES.map((p) => (
           <span
@@ -346,12 +350,24 @@ const PARTICLES = [
         ))}
       </div>
       <div class="relative z-10 text-center flex flex-col items-center">
+        <div class="mb-8">
+          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 21.57 8.72 A 17 17 0 1 1 30.43 8.72" fill="none" stroke="#C4944A" stroke-width="6" stroke-linecap="round" opacity="0.05" transform="translate(0,2)"></path>
+            <path d="M 21.57 8.72 A 17 17 0 1 1 30.43 8.72" fill="none" stroke="#C4944A" stroke-width="1.5" stroke-linecap="round" transform="translate(0,2)"></path>
+            <circle cx="26" cy="12" r="5" fill="#C4944A" opacity="0.08"></circle>
+            <circle cx="26" cy="12" r="2.1" fill="#C4944A"></circle>
+            <line x1="26" y1="5" x2="26" y2="9" stroke="#C4944A" stroke-width="1.1" stroke-linecap="round" opacity="0.65"></line>
+            <line x1="21" y1="7" x2="22.6" y2="9.5" stroke="#C4944A" stroke-width="0.85" stroke-linecap="round" opacity="0.38"></line>
+            <line x1="31" y1="7" x2="29.4" y2="9.5" stroke="#C4944A" stroke-width="0.85" stroke-linecap="round" opacity="0.38"></line>
+          </svg>
+        </div>
         <h2 class="font-serif-italic leading-[1.1]" style="color: var(--text-primary); font-size: clamp(44px, 7vw, 64px)">
           <span data-i18n="finalH1a">{t.finalH1a}</span><br /><span data-i18n="finalH1b">{t.finalH1b}</span>
         </h2>
-        <p class="font-sans mt-5 mx-auto" style="color: var(--text-muted); font-weight: 300; font-size: clamp(16px, 2vw, 18px)" data-i18n="finalSub">{t.finalSub}</p>
+        <p class="font-sans mt-7 mx-auto" style="color: #ffffff; font-weight: 400; font-size: clamp(18px, 2.5vw, 22px); max-width: 480px; text-shadow: 0 1px 8px rgba(0,0,0,0.5)" data-i18n="finalSub">{t.finalSub}</p>
         <a href="/checkout?plan=full" class="btn-gold btn-gold-lg mt-10" data-i18n="finalCta">{t.finalCta}</a>
-        <p class="font-sans mt-5 text-[12px]" style="color: var(--text-faint); font-weight: 300" data-i18n="finalNote">{t.finalNote}</p>
+        <a href="#how-it-works" class="font-sans mt-5 text-[13px]" style="color: var(--text-muted); font-weight: 300; text-decoration: underline; text-underline-offset: 4px">See how it works ↓</a>
+        <p class="font-sans mt-6 text-[13px]" style="color: #ffffff; font-weight: 400; text-shadow: 0 1px 6px rgba(0,0,0,0.8); letter-spacing: 0.5px" data-i18n="finalNote">{t.finalNote}</p>
       </div>
     </section>
 

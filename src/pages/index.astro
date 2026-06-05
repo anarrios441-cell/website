@@ -200,7 +200,7 @@ const PARTICLES = [
     <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
       <img
         class="hero-img"
-        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1920&q=80"
+        src="https://images.unsplash.com/photo-1601758174114-e711c0cbaa69?w=1920&q=80"
         alt=""
         fetchpriority="high"
       />
@@ -261,6 +261,15 @@ const PARTICLES = [
         <p class="font-sans text-center mb-[50px] text-[14px]" style="color: var(--text-muted); font-weight: 300">
           <span class="stars">★★★★★</span>&nbsp;<span data-i18n="testRating">{t.testRating}</span>
         </p>
+        <div class="w-full mb-12 rounded-[2px] overflow-hidden" style="height: 340px">
+          <img
+            src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1920&q=80"
+            alt=""
+            class="w-full h-full object-cover"
+            style="object-position: center 40%"
+          />
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.testimonials.map((c, i) => (
             <div class="p-8" style="background: var(--bg-card); border: 1px solid var(--gold-border); border-left: 2px solid var(--gold)">

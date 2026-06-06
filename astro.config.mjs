@@ -5,6 +5,6 @@ import cloudflare from '@astrojs/cloudflare'
 export default defineConfig({
   site: 'https://www.nazuraai.com',
   output: 'server',
-  adapter: cloudflare(),
+  adapter: cloudflare({ assets: { binding: 'STATIC_ASSETS' } }),
   integrations: [tailwind()],
 })

@@ -1,2 +1,6 @@
 name = "website"
 pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "SESSION"
+id = "feb3eec0c7e347eea7b3b8998914a0a5"

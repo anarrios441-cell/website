@@ -6,21 +6,22 @@ import Logo from '../components/Logo.astro'
    COPY — EN / PT-BR
    ============================================================ */
 const en = {
-  navCta: 'Receive their message',
+  navCta: 'Hear from them one last time',
   heroRating: 'Rated 5 stars · 18 beta families',
   heroH1a: "Keep your pet's",
   heroH1b: 'presence alive.',
   heroSub:
-    "We bring your pet's voice back — one final time. A personalised video message, created from your memories together.",
-  heroCta: 'Receive their message',
+    'For the pets who left too soon. For the people who still hear them.',
+  heroCta: 'Hear from them one last time',
   heroNote: 'Delivered within 24 hours · Private · Yours forever',
   howLabel: 'HOW IT WORKS',
   howH1a: 'Three steps. One message.',
   howH1b: 'A lifetime of comfort.',
+  howSub: 'For the pets who passed. For the people who miss them every day.',
   steps: [
-    { n: '01', title: 'Tell us about them', body: 'Share their name, personality, and your favourite memories. The details only you know.' },
+    { n: '01', title: 'Tell us about the pet you lost', body: 'Their name, their personality, the memories you carry. The details only you know.' },
     { n: '02', title: 'Share your photos', body: "Send us the photos you can't stop looking at. They become the heart of the message." },
-    { n: '03', title: 'Receive their message', body: "It arrives as a surprise. Because that's how love works." },
+    { n: '03', title: 'Receive their message', body: "A goodbye, finally delivered. It arrives as a surprise — because that's how love works." },
   ],
   testLabel: 'WHAT FAMILIES ARE SAYING',
   testH1: '"They said it better than we ever could."',
@@ -32,13 +33,14 @@ const en = {
   ],
   testNote: 'These are real messages from our first beta families.',
   recvLabel: 'WHAT YOU RECEIVE',
-  recvH1: 'Two ways to hear from them.',
+  recvH1: 'Three ways to hear from them — one last time.',
+  recvSub: "They left. But they didn't say everything. Choose how you want to hear the rest.",
   plans: [
     {
       plan: 'letter',
       name: 'The Letter',
       price: '$19',
-      sub: 'A heartfelt written letter, crafted from your memories.',
+      sub: 'The last letter they never got to write — now finally in your hands.',
       badge: '',
       features: [
         'A personalised letter, written as if from them',
@@ -52,8 +54,8 @@ const en = {
       plan: 'full',
       name: 'The Message',
       price: '$39',
-      sub: 'The full experience — voice, video & portrait.',
-      badge: 'Most loved',
+      sub: 'Hear their voice one last time. See their face. Feel like they never fully left.',
+      badge: '',
       features: [
         'Everything in The Letter',
         'A 75-second personalised video message',
@@ -62,11 +64,28 @@ const en = {
       ],
       cta: 'Choose the message',
     },
+    {
+      plan: 'living-memory',
+      name: 'The Living Memory',
+      price: '$59',
+      sub: 'Your real videos of them, woven into their final message. The closest thing to having them back.',
+      badge: 'Most complete',
+      features: [
+        'Everything in The Pet Speaks',
+        'Your real videos woven into the message',
+        'Opens & closes with moments you filmed',
+        '75-second cinematic video',
+        'Private link — no expiry, yours forever',
+      ],
+      cta: 'Create their living memory',
+    },
   ],
   priceNote: 'One time · No subscription · Delivered within 24 hours',
   faqLabel: 'QUESTIONS',
   faqH1: 'You might be wondering.',
   faqs: [
+    { q: 'Is this only for pets who have passed away?', a: 'Yes. Nazura AI was created specifically for pet loss — for families who are grieving and need one final moment of comfort. Every message is crafted with that tenderness in mind.' },
+    { q: 'Will this make my grief worse?', a: 'Our families told us the opposite. 94% said it brought them peace — not more pain. Many described it as the goodbye they never got to have.' },
     { q: 'How long does it take?', a: '24 hours or less. We review every message personally before it reaches you.' },
     { q: 'Is the message really personalised?', a: 'Every word. Every detail. We build it from everything you tell us — their nicknames, habits, the funny things they did. No two messages are ever the same.' },
     { q: "What if I don't have videos?", a: 'Photos are enough. Videos make the experience richer, but they are never required. Many families have created beautiful messages with photos alone.' },
@@ -83,21 +102,21 @@ const en = {
 }
 
 const pt = {
-  navCta: 'Receber mensagem',
+  navCta: 'Ouvi-los uma última vez',
   heroRating: 'Avaliado 5 estrelas · 18 famílias beta',
   heroH1a: 'Mantenha a presença',
   heroH1b: 'do seu pet viva.',
-  heroSub:
-    'Devolvemos a voz do seu pet — uma última vez. Uma mensagem em vídeo personalizada, criada a partir das memórias de vocês.',
-  heroCta: 'Receber mensagem',
+  heroSub: 'Para os pets que se foram cedo demais. Para quem ainda os ouve.',
+  heroCta: 'Ouvi-los uma última vez',
   heroNote: 'Entregue em até 24 horas · Privado · Seu para sempre',
   howLabel: 'COMO FUNCIONA',
   howH1a: 'Três passos. Uma mensagem.',
   howH1b: 'Uma vida de conforto.',
+  howSub: 'Para os pets que partiram. Para quem sente falta deles todos os dias.',
   steps: [
-    { n: '01', title: 'Nos conte sobre eles', body: 'Compartilhe o nome, a personalidade e suas memórias favoritas. Os detalhes que só você conhece.' },
+    { n: '01', title: 'Nos conte sobre o pet que você perdeu', body: 'O nome, a personalidade, as memórias que você carrega. Os detalhes que só você conhece.' },
     { n: '02', title: 'Compartilhe suas fotos', body: 'Envie as fotos que você não consegue parar de olhar. Elas se tornam o coração da mensagem.' },
-    { n: '03', title: 'Receba a mensagem deles', body: 'Ela chega como uma surpresa. Porque é assim que o amor funciona.' },
+    { n: '03', title: 'Receba a mensagem deles', body: 'Uma despedida, finalmente entregue. Chega como uma surpresa — porque é assim que o amor funciona.' },
   ],
   testLabel: 'O QUE AS FAMÍLIAS DIZEM',
   testH1: '"Eles disseram melhor do que nós poderíamos."',
@@ -109,13 +128,14 @@ const pt = {
   ],
   testNote: 'Estas são mensagens reais das nossas primeiras famílias beta.',
   recvLabel: 'O QUE VOCÊ RECEBE',
-  recvH1: 'Duas formas de ouvir deles.',
+  recvH1: 'Três formas de ouvi-los — uma última vez.',
+  recvSub: 'Eles foram. Mas não disseram tudo. Escolha como quer ouvir o restante.',
   plans: [
     {
       plan: 'letter',
       name: 'A Carta',
       price: '$19',
-      sub: 'Uma carta emocionante, criada a partir das suas memórias.',
+      sub: 'A última carta que eles nunca puderam escrever — agora finalmente nas suas mãos.',
       badge: '',
       features: [
         'Uma carta personalizada, escrita como se fosse dele',
@@ -129,8 +149,8 @@ const pt = {
       plan: 'full',
       name: 'A Mensagem',
       price: '$39',
-      sub: 'A experiência completa — voz, vídeo e retrato.',
-      badge: 'Mais amado',
+      sub: 'Ouça a voz deles uma última vez. Veja o rosto deles. Sinta que eles nunca foram completamente embora.',
+      badge: '',
       features: [
         'Tudo da Carta',
         'Uma mensagem em vídeo personalizada de 75 segundos',
@@ -139,11 +159,28 @@ const pt = {
       ],
       cta: 'Escolher a mensagem',
     },
+    {
+      plan: 'living-memory',
+      name: 'A Memória Viva',
+      price: '$59',
+      sub: 'Seus vídeos reais deles, tecidos na mensagem final. O mais perto de tê-los de volta.',
+      badge: 'Mais completo',
+      features: [
+        'Tudo de O Pet Fala',
+        'Seus vídeos reais tecidos na mensagem',
+        'Abre e fecha com momentos que você filmou',
+        'Vídeo cinematográfico de 75 segundos',
+        'Link privado — sem prazo, seu para sempre',
+      ],
+      cta: 'Criar a memória viva',
+    },
   ],
   priceNote: 'Uma vez · Sem assinatura · Entregue em até 24 horas',
   faqLabel: 'DÚVIDAS',
   faqH1: 'Você pode estar se perguntando.',
   faqs: [
+    { q: 'Isso é só para pets que faleceram?', a: 'Sim. A Nazura AI foi criada especificamente para o luto de pets — para famílias que estão de luto e precisam de um último momento de conforto. Cada mensagem é criada com esse cuidado.' },
+    { q: 'Isso vai piorar meu luto?', a: 'Nossas famílias nos disseram o contrário. 94% disseram que trouxe paz — não mais dor. Muitos descreveram como a despedida que nunca puderam ter.' },
     { q: 'Quanto tempo leva?', a: '24 horas ou menos. Revisamos cada mensagem pessoalmente antes de chegar até você.' },
     { q: 'A mensagem é realmente personalizada?', a: 'Cada palavra. Cada detalhe. Construímos a partir de tudo que você nos conta — os apelidos, os hábitos, as coisas engraçadas que faziam. Duas mensagens nunca são iguais.' },
     { q: 'E se eu não tiver vídeos?', a: 'As fotos são suficientes. Os vídeos enriquecem a experiência, mas nunca são obrigatórios. Muitas famílias criaram mensagens lindas apenas com fotos.' },
@@ -235,9 +272,10 @@ const PARTICLES = [
     <section id="how-it-works" class="fade-section relative py-[100px] px-6" style="background: var(--bg-section)">
       <div class="max-w-6xl mx-auto">
         <p class="eyebrow text-center mb-4" data-i18n="howLabel">{t.howLabel}</p>
-        <h2 class="font-serif-italic text-center mb-[60px] leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px); font-weight: 700">
+        <h2 class="font-serif-italic text-center mb-5 leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px); font-weight: 700">
           <span data-i18n="howH1a">{t.howH1a}</span><br /><span data-i18n="howH1b">{t.howH1b}</span>
         </h2>
+        <p class="font-sans text-center mb-[60px]" style="color: var(--text-muted); font-weight: 300; font-size: clamp(15px, 2vw, 17px)" data-i18n="howSub">{t.howSub}</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.steps.map((s, i) => {
             const imgs = [
@@ -283,11 +321,12 @@ const PARTICLES = [
     <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-section)">
       <div class="max-w-6xl mx-auto">
         <p class="eyebrow text-center mb-4" data-i18n="recvLabel">{t.recvLabel}</p>
-        <h2 class="font-serif-italic text-center mb-[60px]" style="color: var(--text-primary); font-size: clamp(36px, 6vw, 52px)" data-i18n="recvH1">{t.recvH1}</h2>
+        <h2 class="font-serif-italic text-center mb-5" style="color: var(--text-primary); font-size: clamp(36px, 6vw, 52px)" data-i18n="recvH1">{t.recvH1}</h2>
+        <p class="font-sans text-center mb-[60px]" style="color: var(--text-muted); font-weight: 300; font-size: clamp(15px, 2vw, 17px)" data-i18n="recvSub">{t.recvSub}</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
           {t.plans.map((pl, pi) => (
-            <div class="relative p-9 rounded-[2px] flex flex-col" style={`background: var(--bg-card); border: 1px solid ${pl.plan === 'full' ? 'var(--gold)' : 'var(--gold-border)'}`}>
+            <div class="relative p-9 rounded-[2px] flex flex-col" style={`background: var(--bg-card); border: ${pl.plan === 'living-memory' ? '2px solid var(--gold); box-shadow: 0 0 40px rgba(196,148,74,0.12)' : '1px solid ' + (pl.plan === 'full' ? 'var(--gold-border)' : 'var(--gold-border)')}`}>
               {pl.badge && (
                 <span class="absolute -top-3 left-1/2 -translate-x-1/2 font-sans whitespace-nowrap" style="background: var(--gold); color: #0A0806; font-size: 10px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 2px" data-i18n={`plans.${pi}.badge`}>{pl.badge}</span>
               )}

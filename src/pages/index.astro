@@ -55,7 +55,7 @@ const en = {
       name: 'The Message',
       price: '$39',
       sub: 'Hear their voice one last time. See their face. Feel like they never fully left.',
-      badge: '',
+      badge: 'Most chosen',
       features: [
         'Everything in The Letter',
         'A 75-second personalised video message',
@@ -67,15 +67,16 @@ const en = {
     {
       plan: 'living-memory',
       name: 'The Living Memory',
-      price: '$59',
+      price: '$69',
       sub: 'Your real videos of them, woven into their final message. The closest thing to having them back.',
-      badge: 'Most complete',
+      badge: 'Most loved',
       features: [
         'Everything in The Pet Speaks',
         'Your real videos woven into the message',
         'Opens & closes with moments you filmed',
         '75-second cinematic video',
         'Private link — no expiry, yours forever',
+        'Delivered within 72 hours',
       ],
       cta: 'Create their living memory',
     },
@@ -150,7 +151,7 @@ const pt = {
       name: 'A Mensagem',
       price: '$39',
       sub: 'Ouça a voz deles uma última vez. Veja o rosto deles. Sinta que eles nunca foram completamente embora.',
-      badge: '',
+      badge: 'Mais escolhido',
       features: [
         'Tudo da Carta',
         'Uma mensagem em vídeo personalizada de 75 segundos',
@@ -162,15 +163,16 @@ const pt = {
     {
       plan: 'living-memory',
       name: 'A Memória Viva',
-      price: '$59',
+      price: '$69',
       sub: 'Seus vídeos reais deles, tecidos na mensagem final. O mais perto de tê-los de volta.',
-      badge: 'Mais completo',
+      badge: 'Mais amado',
       features: [
         'Tudo de O Pet Fala',
         'Seus vídeos reais tecidos na mensagem',
         'Abre e fecha com momentos que você filmou',
         'Vídeo cinematográfico de 75 segundos',
         'Link privado — sem prazo, seu para sempre',
+        'Entregue em até 72 horas',
       ],
       cta: 'Criar a memória viva',
     },
@@ -349,27 +351,6 @@ const PARTICLES = [
       </div>
     </section>
 
-    <!-- ===================== FAQ ===================== -->
-    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-primary)">
-      <div class="max-w-[680px] mx-auto">
-        <p class="eyebrow text-center mb-4" data-i18n="faqLabel">{t.faqLabel}</p>
-        <h2 class="font-serif-italic text-center mb-12" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)" data-i18n="faqH1">{t.faqH1}</h2>
-        <div>
-          {t.faqs.map((f, i) => (
-            <div class="py-5" style="border-bottom: 1px solid var(--gold-border)">
-              <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" data-index={i}>
-                <span class="font-sans" style="color: var(--text-primary); font-weight: 400; font-size: 16px" data-i18n={`faqs.${i}.q`}>{f.q}</span>
-                <span class="faq-arrow" style="color: var(--gold)">➜</span>
-              </button>
-              <div class="faq-answer">
-                <p class="font-sans pt-4" style="color: var(--text-muted); font-weight: 300; font-size: 15px; line-height: 1.75" data-i18n={`faqs.${i}.a`}>{f.a}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== FINAL CTA ===================== -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
       <img
@@ -407,6 +388,27 @@ const PARTICLES = [
         <a href="https://nazura-ai.vercel.app/criar?plan=full" class="btn-gold btn-gold-lg mt-10" data-i18n="finalCta" data-form-plan="full">{t.finalCta}</a>
         <a href="#how-it-works" class="font-sans mt-5 text-[13px]" style="color: var(--text-muted); font-weight: 300; text-decoration: underline; text-underline-offset: 4px">See how it works ↓</a>
         <p class="font-sans mt-6 text-[13px]" style="color: #ffffff; font-weight: 400; text-shadow: 0 1px 6px rgba(0,0,0,0.8); letter-spacing: 0.5px" data-i18n="finalNote">{t.finalNote}</p>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-primary)">
+      <div class="max-w-[680px] mx-auto">
+        <p class="eyebrow text-center mb-4" data-i18n="faqLabel">{t.faqLabel}</p>
+        <h2 class="font-serif-italic text-center mb-12" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)" data-i18n="faqH1">{t.faqH1}</h2>
+        <div>
+          {t.faqs.map((f, i) => (
+            <div class="py-5" style="border-bottom: 1px solid var(--gold-border)">
+              <button class="faq-toggle w-full flex items-center justify-between text-left gap-4" data-index={i}>
+                <span class="font-sans" style="color: var(--text-primary); font-weight: 400; font-size: 16px" data-i18n={`faqs.${i}.q`}>{f.q}</span>
+                <span class="faq-arrow" style="color: var(--gold)">➜</span>
+              </button>
+              <div class="faq-answer">
+                <p class="font-sans pt-4" style="color: var(--text-muted); font-weight: 300; font-size: 15px; line-height: 1.75" data-i18n={`faqs.${i}.a`}>{f.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 

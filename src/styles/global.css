@@ -255,3 +255,58 @@ body {
   cursor: pointer;
   transition: color 0.2s ease;
 }
+
+/* ============================================================
+   REVIEWS MARQUEE
+   ============================================================ */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.reviews-marquee-wrap {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 22px 0;
+}
+
+.marquee-fade-left,
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-fade-left  { left: 0;  background: linear-gradient(to right, var(--bg-primary) 40%, transparent); }
+.marquee-fade-right { right: 0; background: linear-gradient(to left,  var(--bg-primary) 40%, transparent); }
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 40px;
+}
+
+.marquee-sep {
+  color: var(--gold);
+  font-size: 9px;
+  opacity: 0.5;
+  flex-shrink: 0;
+}

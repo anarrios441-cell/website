@@ -27,7 +27,9 @@ const en = {
   testH1: '"They said it better than we ever could."',
   testRating: '18 reviews · 94% satisfaction · Early Beta',
   testimonials: [
+    { quote: "Surprising — I didn't know I needed to read this until I did. What a wonderful feeling. 🥺", name: 'Thayze · Luna, 8 years' },
     { quote: 'I watched it four times. Each time I found something new that was exactly her.', name: 'Sarah · Australia' },
+    { quote: 'Loved it.', name: 'Marcela · Toy, 18 years' },
     { quote: "I didn't expect to laugh. But I did. And then I cried. And then I laughed again.", name: 'Miguel · Brazil' },
     { quote: "He said the thing I needed to hear. I don't know how, but he did.", name: 'Emma · United Kingdom' },
   ],
@@ -123,7 +125,9 @@ const pt = {
   testH1: '"Eles disseram melhor do que nós poderíamos."',
   testRating: '18 avaliações · 94% de satisfação · Beta inicial',
   testimonials: [
+    { quote: 'Surpreendente, não sabia que precisava ler isso, até ler. 🥺 Que sensação boa.', name: 'Thayze · Luna, 8 anos' },
     { quote: 'Assisti quatro vezes. A cada vez encontrei algo novo que era exatamente ela.', name: 'Sarah · Austrália' },
+    { quote: 'Adorei.', name: 'Marcela · Toy, 18 anos' },
     { quote: 'Não esperava rir. Mas eu ri. E depois chorei. E depois ri de novo.', name: 'Miguel · Brasil' },
     { quote: 'Ele disse o que eu precisava ouvir. Não sei como, mas disse.', name: 'Emma · Reino Unido' },
   ],
@@ -197,15 +201,6 @@ const pt = {
   footLinks: ['Política de Privacidade', 'Termos de Serviço'],
   copyright: '© 2025 Nazura AI. Todos os direitos reservados.',
 }
-
-/* ── Reviews marquee — always EN, all real beta families ─────────────────── */
-const REVIEWS = [
-  { text: "Surprising — I didn't know I needed to read this until I read it. What a wonderful feeling.", name: "Thayze", pet: "Luna · 8 years" },
-  { text: "I watched it four times. Each time I found something new that was exactly her.", name: "Sarah", pet: "Australia" },
-  { text: "Loved it.", name: "Marcela", pet: "Toy · 18 years" },
-  { text: "I didn't expect to laugh. But I did. And then I cried. And then I laughed again.", name: "Miguel", pet: "Brazil" },
-  { text: "He said the thing I needed to hear. I don't know how, but he did.", name: "Emma", pet: "United Kingdom" },
-]
 
 /* default-render language */
 const t = en
@@ -312,32 +307,33 @@ const PARTICLES = [
     </section>
 
     <!-- ===================== TESTIMONIALS ===================== -->
-    <section class="fade-section relative py-[100px] px-6" style="background: var(--bg-primary)">
-      <div class="max-w-6xl mx-auto mb-16">
+    <section class="fade-section relative py-[100px]" style="background: var(--bg-primary)">
+      <div class="max-w-6xl mx-auto px-6 mb-14">
         <p class="eyebrow text-center mb-4" data-i18n="testLabel">{t.testLabel}</p>
         <h2 class="font-serif-italic text-center mb-5 leading-[1.15]" style="color: var(--text-primary); font-size: clamp(32px, 5vw, 44px)" data-i18n="testH1">{t.testH1}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.testimonials.map((c, i) => (
-            <div class="p-8" style="background: var(--bg-card); border: 1px solid var(--gold-border); border-left: 2px solid var(--gold)">
+      </div>
+
+      <!-- Card carousel -->
+      <div class="test-carousel-wrap">
+        <div class="test-fade-left"></div>
+        <div class="test-fade-right"></div>
+
+        <div id="carousel-en" class="test-carousel-track">
+          {[...en.testimonials, ...en.testimonials].map((c) => (
+            <div class="test-card">
               <p class="mb-4 text-[13px]"><span class="stars">★★★★★</span></p>
-              <p class="font-serif-italic mb-5" style="color: var(--text-primary); font-size: 19px; line-height: 1.5" data-i18n={`testimonials.${i}.quote`}>{c.quote}</p>
-              <p class="font-sans text-[13px]" style="color: var(--text-muted); font-weight: 400" data-i18n={`testimonials.${i}.name`}>{c.name}</p>
+              <p class="font-serif-italic mb-5" style="color: var(--text-primary); font-size: 19px; line-height: 1.6">"{c.quote}"</p>
+              <p class="font-sans text-[13px]" style="color: var(--text-muted); font-weight: 400">{c.name}</p>
             </div>
           ))}
         </div>
-      </div>
 
-      <!-- ── Reviews marquee ── -->
-      <div class="reviews-marquee-wrap">
-        <div class="marquee-fade-left"></div>
-        <div class="marquee-fade-right"></div>
-        <div class="marquee-track">
-          {[...REVIEWS, ...REVIEWS].map((r, i) => (
-            <div class="marquee-item" key={i}>
-              <span class="stars" style="font-size: 11px; letter-spacing: 3px; flex-shrink: 0;">★★★★★</span>
-              <p class="font-serif-italic" style="color: var(--text-primary); font-size: 15px; white-space: nowrap;">"{r.text}"</p>
-              <span class="font-sans" style="color: var(--text-muted); font-size: 12px; white-space: nowrap; font-weight: 300; flex-shrink: 0;">— {r.name}, {r.pet}</span>
-              <span class="marquee-sep">✦</span>
+        <div id="carousel-pt" class="test-carousel-track" style="display:none">
+          {[...pt.testimonials, ...pt.testimonials].map((c) => (
+            <div class="test-card">
+              <p class="mb-4 text-[13px]"><span class="stars">★★★★★</span></p>
+              <p class="font-serif-italic mb-5" style="color: var(--text-primary); font-size: 19px; line-height: 1.6">"{c.quote}"</p>
+              <p class="font-sans text-[13px]" style="color: var(--text-muted); font-weight: 400">{c.name}</p>
             </div>
           ))}
         </div>
@@ -494,6 +490,10 @@ const PARTICLES = [
       l === 'en' ? 'var(--gold)' : 'var(--text-muted)'
     document.getElementById('lang-pt').style.color =
       l === 'pt' ? 'var(--gold)' : 'var(--text-muted)'
+    const cEn = document.getElementById('carousel-en')
+    const cPt = document.getElementById('carousel-pt')
+    if (cEn) cEn.style.display = l === 'en' ? 'flex' : 'none'
+    if (cPt) cPt.style.display = l === 'pt' ? 'flex' : 'none'
   }
 
   // Manual pick — remember it so it sticks on reload

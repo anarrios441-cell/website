@@ -264,49 +264,44 @@ body {
   to   { transform: translateX(-50%); }
 }
 
-.reviews-marquee-wrap {
+/* ── Testimonial card carousel ───────────────────────────────────────────── */
+.test-carousel-wrap {
   position: relative;
   overflow: hidden;
-  border-top: 1px solid var(--gold-border);
-  border-bottom: 1px solid var(--gold-border);
-  padding: 22px 0;
 }
 
-.marquee-fade-left,
-.marquee-fade-right {
+.test-fade-left,
+.test-fade-right {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 140px;
+  width: 160px;
   z-index: 2;
   pointer-events: none;
 }
 
-.marquee-fade-left  { left: 0;  background: linear-gradient(to right, var(--bg-primary) 40%, transparent); }
-.marquee-fade-right { right: 0; background: linear-gradient(to left,  var(--bg-primary) 40%, transparent); }
+.test-fade-left  { left: 0;  background: linear-gradient(to right, var(--bg-primary) 30%, transparent); }
+.test-fade-right { right: 0; background: linear-gradient(to left,  var(--bg-primary) 30%, transparent); }
 
-.marquee-track {
+.test-carousel-track {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   width: max-content;
-  animation: marquee-scroll 45s linear infinite;
+  gap: 16px;
+  padding: 4px 8px;
+  animation: marquee-scroll 38s linear infinite;
   will-change: transform;
 }
 
-.marquee-track:hover {
+.test-carousel-track:hover {
   animation-play-state: paused;
 }
 
-.marquee-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0 40px;
-}
-
-.marquee-sep {
-  color: var(--gold);
-  font-size: 9px;
-  opacity: 0.5;
+.test-card {
+  width: 360px;
   flex-shrink: 0;
+  padding: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-left: 2px solid var(--gold);
 }

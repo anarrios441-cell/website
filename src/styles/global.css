@@ -59,11 +59,12 @@ body {
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: var(--text-faint);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--gold);
   text-transform: uppercase;
+  opacity: 0.8;
 }
 
 .stars {

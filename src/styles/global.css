@@ -306,3 +306,19 @@ body {
   border: 1px solid var(--gold-border);
   border-left: 2px solid var(--gold);
 }
+
+@media (max-width: 640px) {
+  .test-carousel-track {
+    animation-duration: 20s;
+    gap: 12px;
+  }
+  .test-card {
+    width: 260px;
+    padding: 22px;
+    font-size: 15px;
+  }
+  .test-fade-left,
+  .test-fade-right {
+    width: 60px;
+  }
+}

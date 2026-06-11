@@ -229,12 +229,13 @@ const PARTICLES = [
       <div class="max-w-6xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
         <Logo width={200} height={48} />
         <div class="flex items-center gap-4 sm:gap-6">
-          <div class="flex items-center gap-2">
+          <!-- Lang toggle — hidden for EN-only launch. To re-enable: remove style="display:none" -->
+          <div class="flex items-center gap-2" style="display:none">
             <button id="lang-en" class="lang-btn" style="color: var(--gold)" aria-label="English">EN</button>
             <span style="color: var(--text-faint)">|</span>
             <button id="lang-pt" class="lang-btn" style="color: var(--text-muted)" aria-label="Português">PT</button>
           </div>
-          <a href="https://nazura-ai.vercel.app/criar?plan=full" class="btn-gold btn-gold-sm hidden sm:inline-block" data-i18n="navCta" data-form-plan="full">{t.navCta}</a>
+          <a href="https://nazura-ai.vercel.app/en?plan=full" class="btn-gold btn-gold-sm hidden sm:inline-block" data-i18n="navCta" data-form-plan="full">{t.navCta}</a>
         </div>
       </div>
     </header>
@@ -496,25 +497,24 @@ const PARTICLES = [
     if (cPt) cPt.style.display = l === 'pt' ? 'flex' : 'none'
   }
 
-  // Manual pick — remember it so it sticks on reload
+  // EN-only launch — PT hidden. To re-enable bilingual:
+  // 1. Remove style="display:none" from the lang toggle in the header
+  // 2. Uncomment the block below and remove the applyLang('en') line
+  applyLang('en')
+
+  /*
   function pickLang(l) {
     applyLang(l)
-    try {
-      localStorage.setItem('nazura-lang', l)
-    } catch (e) {}
+    try { localStorage.setItem('nazura-lang', l) } catch (e) {}
   }
   document.getElementById('lang-en').addEventListener('click', () => pickLang('en'))
   document.getElementById('lang-pt').addEventListener('click', () => pickLang('pt'))
-
-  // Auto-detect on load: a remembered manual choice wins; otherwise use the
-  // device/browser language (Portuguese devices → PT, everyone else → EN).
   let saved = null
-  try {
-    saved = localStorage.getItem('nazura-lang')
-  } catch (e) {}
+  try { saved = localStorage.getItem('nazura-lang') } catch (e) {}
   const deviceLangs = navigator.languages || [navigator.language || 'en']
   const deviceIsPt = deviceLangs.some((l) => l.toLowerCase().startsWith('pt'))
   applyLang(saved || (deviceIsPt ? 'pt' : 'en'))
+  */
 
   // FAQ accordion
   document.querySelectorAll('.faq-toggle').forEach((btn) => {
